@@ -141,6 +141,38 @@ if the is some link/direction info between the pipes  which can help us infer th
 
 **Lets investigate a bit more into these categorical features**
 
+```
+sewer_df.select('Location','Event', 'Rain').distinct().show()
+```
+
+**output**
+```
++--------------------+--------------------+----+
+|            Location|               Event|Rain|
++--------------------+--------------------+----+
+|Winston-Thomas Ol...|       Leaking joint|null|
+|       5900 S Rogers|                null|null|
+|Industrial lift s...|Power outage at l...|null|
+|  Sherwood Oaks Park|                null|null|
+|Grimes Lane - Mic...|       Precipitation|1.58|
+|        Gifford Road|       Precipitation|1.23|
+|College Mall - St...|       Precipitation|null|
+|SW of cul-de-sac ...|Sewer main broken...|null|
+|Walnut Creek Lift...|       Precipitation|1.79|
+|        Micro Motors|                null|2.50|
+|  Blucher Poole WWTP|                null|null|
+|         Dunn meadow|Blockage in sewer...|null|
+|   Indiana Warehouse|       Precipitation|null|
+|Grimes Lane - Mic...|       Precipitation|2.95|
+|1500 S Rogers - I...|Snow melt / preci...|1.20|
+|        Gifford Road|       Precipitation|0.43|
+|Brookdale & Woodburn|Snow melt / preci...|4.38|
+|2600 Block of N W...|Blockage in sewer...|null|
+|College Mall - Bl...|       Precipitation|1.90|
+|  Tower Lift Station|         Power surge|null|
++--------------------+--------------------+----+
+only showing top 20 rows
+```
 
 ### Missing values Assumptions Review
 ---
