@@ -196,5 +196,5 @@ only showing top 20 rows
  <img src="https://2.bp.blogspot.com/-krUh_2djN40/W83rS6Yb4oI/AAAAAAAAD90/ZNExj7o2vbc_KXls4uEIFSh9RRnF8hUsACLcBGAs/s1600/loading.gif" hight="500" width="500"></img>
  
 # WORK IN PROGRESS 
-- Due to the kick-off the main PoC project this project had to be paused.
+- Due to the kick-off of the main PoC project this project had to be paused.
 - Looking forward to complete all the task to enhence my skills
