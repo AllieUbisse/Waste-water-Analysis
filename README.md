@@ -2,7 +2,7 @@
 ![](https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ4EreGzBWX2DaX8Scl4aT-SasVzuzGD__isw&usqp=CAU) ![](https://d33wubrfki0l68.cloudfront.net/e7ed9fe4bafe46e275c807d63591f85f9ab246ba/e2d28/assets/images/tux.png)
 
 ### Acknowledgement
-:star:[bloomington gov](https://data.bloomington.in.gov) 
+Data is collected gathered from :star:[bloomington gov](https://data.bloomington.in.gov) 
 - [data source 1](https://data.bloomington.in.gov/dataset/sanitary-sewer-overflows/resource/2e44981b-bb63-46b3-ba66-9b3b09786ec4) | [data source 2](https://data.world/city-of-bloomington/51fdd0d4-2fa2-4dd4-a877-8f683fb72f93) 
 - data released under [Creative Commons Attribution license](http://opendefinition.org/licenses/cc-by/)
 
@@ -62,6 +62,66 @@ Excel Worksheet labeled "Sanitary Sewer Overflow Master" is data recorded follow
 12. Build a DataBricks DashBoard using the streamed data/ static data.
 13. Can the dashboard answer business Questions? 
 14. if #13 is No/not sure! what is irralevant and what can be improved?
+
+# Data quality checks overview Report
+```python
+# review 1st 5 rows
+sewer_df.show(5)
+```
+**Output**
+```
++-------+-------------------+-------------------+--------------------+-------------+----+-------+-----------+------------+
+|Manhole|         Start_Date|           End_Date|            Location|        Event|Rain|Gallons|        Lat|        Long|
++-------+-------------------+-------------------+--------------------+-------------+----+-------+-----------+------------+
+|   3430|1996-01-17 00:00:00|1996-01-17 00:00:00|        Gifford Road|Precipitation|null|   9000|39.15461147|-86.58559815|
+|   1004|1996-01-17 00:00:00|1996-01-17 00:00:00|        Micro Motors|Precipitation|null| 378000|39.15424046|-86.53475475|
+|   3607|1996-01-17 00:00:00|1996-01-17 00:00:00|  Sherwood Oaks Park|Precipitation|null|   6000|39.12983645|-86.51441395|
+|   3138|1996-01-17 00:00:00|1996-01-17 00:00:00|Tapp Road Lift St...|Precipitation|null|  16000| 39.1366197|-86.56178514|
+|   1004|1996-01-23 00:00:00|1996-01-23 00:00:00|        Micro Motors|Precipitation|null|  90000|39.15424046|-86.53475475|
++-------+-------------------+-------------------+--------------------+-------------+----+-------+-----------+------------+
+only showing top 5 rows
+```
+
+```python
+# let's verify schema with the data dctionary & what we saw from the previous cell
+sewer_df.printSchema()
+```
+**output**
+```
+root
+ |-- Manhole: string (nullable = true)
+ |-- Start_Date: timestamp (nullable = true)
+ |-- End_Date: string (nullable = true)
+ |-- Location: string (nullable = true)
+ |-- Event: string (nullable = true)
+ |-- Rain: string (nullable = true)
+ |-- Gallons: string (nullable = true)
+ |-- Lat: double (nullable = true)
+ |-- Long: double (nullable = true)
+
+```
+```python
+# let's cast Manhole-->int, End_Date-->timestamp and Gallons-->integer/long
+sewer_df = (sewer_df.withColumn('End_Date', sewer_df.End_Date.cast('timestamp'))
+                    .withColumn('Gallons', sewer_df.Gallons.cast('int'))
+                    .withColumn('Manhole', sewer_df.Manhole.cast('int'))
+                    )
+# print changes
+sewer_df.printSchema()
+```
+**output**
+```
+root
+ |-- Manhole: integer (nullable = true)
+ |-- Start_Date: timestamp (nullable = true)
+ |-- End_Date: timestamp (nullable = true)
+ |-- Location: string (nullable = true)
+ |-- Event: string (nullable = true)
+ |-- Rain: string (nullable = true)
+ |-- Gallons: integer (nullable = true)
+ |-- Lat: double (nullable = true)
+ |-- Long: double (nullable = true)
+```
 
 # WORK IN PROGRESS 
 - Due to the kick-off the main PoC project this project had to be paused.
