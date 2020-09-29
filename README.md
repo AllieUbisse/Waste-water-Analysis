@@ -1,2 +1,2 @@
 # Waste-water-Analysis
-Spark Practice Project preparing for the Private Proof of Concept Project
+Spark Practice Project preparing for the Private Explore Ai Proof of Concept Project
