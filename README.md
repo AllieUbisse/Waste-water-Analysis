@@ -55,4 +55,6 @@ Excel Worksheet labeled "Sanitary Sewer Overflow Master" is data recorded follow
 13. Can the dashboard answer business Questions? 
 14. if #13 is No/not sure! what is irralevant and what can be improved?
 
-
+# WORK IN PROGRESS 
+- Due to the kick-off the main PoC project this project had to be paused.
+- Looking forward to complete all the task to enhence my skills
