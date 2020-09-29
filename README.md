@@ -6,6 +6,14 @@
 - [data source 1](https://data.bloomington.in.gov/dataset/sanitary-sewer-overflows/resource/2e44981b-bb63-46b3-ba66-9b3b09786ec4) | [data source 2](https://data.world/city-of-bloomington/51fdd0d4-2fa2-4dd4-a877-8f683fb72f93) 
 - data released under [Creative Commons Attribution license](http://opendefinition.org/licenses/cc-by/)
 
+### Requirements
+*The following are the requirements to run the notebooks*
+
+---
+- [Databricks community account](https://community.cloud.databricks.com/login.html) which is Free
+- Cluster runtime 5.4 with spark 2.4 to 3.0
+- Import the `waste-water-analysis.dbc` file to Databricks and it will generate all the required tools
+
 ## Overview
 Sanitary Sewer Overflows (SSO) are releases of untreated sewage into the environment. City of Bloomington Utilities Department records and maintains data for all SSO events that occur within Bloomington's wastewater collection and treatment system. Additionally, each event is reported to the Indiana Department of Environmental Management.
 
