@@ -123,6 +123,39 @@ root
  |-- Long: double (nullable = true)
 ```
 
+## Missing value report
+---
+It is important to discuss the missing data with the stackholders or the data team<br>
+to understand the infomation convey by the missing data. 
+
+- Lets take for example the Rain Feature with 608 missing data, what does that mean?
+> The was no rain that particular day, right?<br>
+> So this means we can't drop the rain feature instead we fill it with a reasonable value e.g **'No Rain'**
+
+- **Location, long and lat** on the other hand might need the stackholders/ data team to clearify<br>
+if the is some link/direction info between the pipes  which can help us infer the location, before any assumption.
+
+- **'Event'** most being **Precipitation** is rain, snow, sleet, or hail — any kind of weather condition where something's falling from the sky.<br>
+> This feature will make sense to be null/missing if the is also no rain, but not always.<br>
+> let's mark Nan as **clear sky** unless validated otherwise.
+
+**Lets investigate a bit more into these categorical features**
+
+
+### Missing values Assumptions Review
+---
+ - So **Rain** is the measure of rain in volume/litres not what we suspected. **We must extend the data dictionary**,<br>
+ > now is better we can fill Null for Rain with a Zero meaning the was no Rain.<br>
+ > Wait! This is not a hackathon Allie, we might need to pull weather data from google Earth to validate the assumptions.
+ 
+ - **'Event' has 48** most being **Precipitation** but we can see that we have 48 unique values for Event e.g **Blockage, Sewer main blockage , power and more**<br>
+ 
+ - **Location & Event** Seems to be compound features,<br> we need to do some deep dive mining and  see how we can explode them if possible
+ 
+ - Cast **Rain** to float which in pyspark is *DoubleType or Just FloatType* following Java data-types
+ 
+ #### more drill and wrangling is required here
+ 
 # WORK IN PROGRESS 
 - Due to the kick-off the main PoC project this project had to be paused.
 - Looking forward to complete all the task to enhence my skills
