@@ -2,7 +2,7 @@
 ![](https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ4EreGzBWX2DaX8Scl4aT-SasVzuzGD__isw&usqp=CAU) ![](https://d33wubrfki0l68.cloudfront.net/e7ed9fe4bafe46e275c807d63591f85f9ab246ba/e2d28/assets/images/tux.png)
 
 ### Acknowledgement
-Data is collected gathered from :star:[bloomington gov](https://data.bloomington.in.gov) 
+Data was gathered from :star:[bloomington gov](https://data.bloomington.in.gov) 
 - [data source 1](https://data.bloomington.in.gov/dataset/sanitary-sewer-overflows/resource/2e44981b-bb63-46b3-ba66-9b3b09786ec4) | [data source 2](https://data.world/city-of-bloomington/51fdd0d4-2fa2-4dd4-a877-8f683fb72f93) 
 - data released under [Creative Commons Attribution license](http://opendefinition.org/licenses/cc-by/)
 
